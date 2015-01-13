@@ -35,36 +35,32 @@
 # require 'space.txt'
 # require 'comma.txt'
 
-pipe_file = 'pipe.txt'
-space_file = 'space.txt'
-comma_file = 'comma.txt'
-
-def print_lines(*files)
-  files.each do |file|
-    File.readlines(file).each do |line|
-      puts line
-    end
-  end
-end
-
-print_lines(pipe_file, space_file, comma_file)
 
 class Delimiter
 
-  attr_reader :pipe_delimited
+  attr_reader :delimited_lines
 
   def initialize
-    @pipe_delimited = []
+    @delimited_lines = []
   end
 
-  def delimit_file
-    @pipe_delimited << "Smith Steve Male 3/3/1985 Red"
+  def delimit_file(*files)
+    files.each do |file|
+      @delimited_lines << file
+      File.readlines(file).each do |line|
+        puts line
+      end
+    end
   end
 
 end
 
+
+pipe_file = 'pipe.txt'
+space_file = 'space.txt'
+comma_file = 'comma.txt'
 delimiter = Delimiter.new
 
-p delimiter.delimit_file
-
-delimiter.pipe_delimited == ["Smith Steve Male 3/3/1985 Red"]
+delimiter.delimit_file(pipe_file, space_file, comma_file)
+p delimiter.delimited_lines
+p delimiter.delimit_file == ["Smith Steve Male 3/3/1985 Red"]
