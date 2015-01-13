@@ -1,10 +1,10 @@
 # PURPOSE
   # We hope that this exercise will allow us to evaluate your skills as a developer. The qualities that we pay special attention to are:
-    #  Simplicity/elegance of design
-    #  Adherence to good software engineering principles
-    #  Maintainability (clean, easy to understand code)
-    #  Effective use of the standard library
-    #  Use of unit tests
+    # Simplicity/elegance of design
+    # Adherence to good software engineering principles
+    # Maintainability (clean, easy to understand code)
+    # Effective use of the standard library
+    # Use of unit tests
 
 # PACKAGING
   #  Please package the code in a zip or tar archive when you send it to us.
@@ -30,7 +30,22 @@
       # Output 1 – sorted by gender (females before males) then by last name ascending.
       # Output 2 – sorted by birth date, ascending.
       # Output 3 – sorted by last name, descending.
+class Delimiter
 
-pipe_delimited = "Smith Steve Male 3/3/1985 Red"
+  attr_reader :pipe_delimited
 
-pipe_delimited == "Smith Steve Male 3/3/1985 Red"
+  def initialize
+    @pipe_delimited = []
+  end
+
+  def delimit_file
+    @pipe_delimited << "Smith Steve Male 3/3/1985 Red"
+  end
+
+end
+
+delimiter = Delimiter.new
+
+p delimiter.delimit_file
+
+delimiter.pipe_delimited == ["Smith Steve Male 3/3/1985 Red"]
