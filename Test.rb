@@ -30,6 +30,25 @@
       # Output 1 – sorted by gender (females before males) then by last name ascending.
       # Output 2 – sorted by birth date, ascending.
       # Output 3 – sorted by last name, descending.
+
+# require 'pipe.txt'
+# require 'space.txt'
+# require 'comma.txt'
+
+pipe_file = 'pipe.txt'
+space_file = 'space.txt'
+comma_file = 'comma.txt'
+
+def print_lines(*files)
+  files.each do |file|
+    File.readlines(file).each do |line|
+      puts line
+    end
+  end
+end
+
+print_lines(pipe_file, space_file, comma_file)
+
 class Delimiter
 
   attr_reader :pipe_delimited
