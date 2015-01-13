@@ -38,29 +38,29 @@
 
 class Delimiter
 
-  attr_reader :delimited_lines
+  # attr_reader :delimited_lines
 
-  def initialize
-    @file_checker = []
-  end
+  # def initialize
+  #   @file_checker = []
+  # end
 
-  def file_checker(*files)
-    files.each do |file|
-      @delimited_lines << file
-      File.readlines(file).each do |line|
-        puts line
-      end
-    end
-  end
+  # def file_checker(*files)
+  #   files.each do |file|
+  #     @delimited_lines << file
+  #     File.readlines(file).each do |line|
+  #       puts line
+  #     end
+  #   end
+  # end
 
 end
 
 
-pipe_file = 'pipe.txt'
-space_file = 'space.txt'
-comma_file = 'comma.txt'
-delimiter = Delimiter.new
+# pipe_file = 'pipe.txt'
+# space_file = 'space.txt'
+# comma_file = 'comma.txt'
+# delimiter = Delimiter.new
 
-delimiter.file_checker(pipe_file, space_file, comma_file)
-p delimiter.delimited_lines
-p delimiter.delimit_file == ["Smith Steve Male 3/3/1985 Red"]
+# delimiter.file_checker(pipe_file, space_file, comma_file)
+# p delimiter.delimited_lines
+# p delimiter.delimit_file == ["Smith Steve Male 3/3/1985 Red"]
