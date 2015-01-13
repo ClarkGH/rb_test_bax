@@ -38,20 +38,20 @@
 
 class Delimiter
 
-  # attr_reader :delimited_lines
+  attr_reader :delimited_lines
 
-  # def initialize
-  #   @file_checker = []
-  # end
+  def initialize
+    @file_checker = []
+  end
 
-  # def file_checker(*files)
-  #   files.each do |file|
-  #     @delimited_lines << file
-  #     File.readlines(file).each do |line|
-  #       puts line
-  #     end
-  #   end
-  # end
+  def file_checker(*files)
+    files.each do |file|
+      @delimited_lines << file
+      File.readlines(file).each do |line|
+        puts line
+      end
+    end
+  end
 
 end
 
